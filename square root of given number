@@ -1,0 +1,29 @@
+import java.util.*;
+public class SquareRoot{
+	public static void main(String args[]){
+		int num;
+		System.out.println("enter any number ");
+		Scanner sc=new Scanner(System.in);
+		num=sc.nextInt();
+		System.out.println(squareroot(num));
+	}
+	public static int squareroot(int num){
+		int left=1;
+		int right=num;
+		int ans=0;
+		while(left<=right){
+			int mid=left+(right-left)/2;
+			if (mid*mid==num)
+				return mid;
+			else if(mid*mid<num){
+				left=mid+1;
+				ans=mid;
+			}
+			else{
+				right=mid-1;
+			}
+		
+		}
+		return ans;
+	}
+}
